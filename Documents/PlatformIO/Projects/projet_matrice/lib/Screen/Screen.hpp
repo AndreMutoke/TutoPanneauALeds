@@ -9,7 +9,7 @@
 #ifndef PSTR
     #define PSTR // Make Arduino Due happy
 #endif
-class Screen : public Adafruit_NeoMatrix
+class Screen
 {
 public:
     Screen(int width, // La largeur de l'ecran, ou le nombre des leds en Largeur
@@ -21,6 +21,10 @@ public:
                                           NEO_MATRIX_PROGRESSIVE, // Le type de la matrice
            neoPixelType ledType = (neoPixelType) NEO_GRB + NEO_KHZ800); // le type des Leds
     ~Screen();
+    void hello_world(int x);
+    void begin();
+    void cleanScreen();
+
 
 private:
     int m_largeur; // La largeur de l'ecran, qui correspond au nombre des Leda en Largeur

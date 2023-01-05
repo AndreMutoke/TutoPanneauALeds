@@ -15,3 +15,21 @@ Screen::~Screen()
 {
     delete matrix;
 }
+void Screen::begin()
+{
+    matrix->begin();
+    matrix->setTextWrap(false);
+    matrix->setBrightness(200);
+    matrix->setTextColor(matrix->Color(0, 255, 0));
+}
+void Screen::hello_world(int x)
+{
+    matrix->fillScreen(0);
+    matrix->setCursor(x, 0);
+    matrix->print("Hello World!");   
+    matrix->show();
+}
+void Screen::cleanScreen()
+{
+    matrix->clear();
+}
